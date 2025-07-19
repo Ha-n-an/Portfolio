@@ -238,6 +238,7 @@
 // }
 import { useState } from "react";
 import { CardContent } from "@/components/ui/card";
+import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -250,9 +251,7 @@ export default function Contact() {
     const res = await fetch("https://formspree.io/f/mzzvzleg", {
       method: "POST",
       body: data,
-      headers: {
-        Accept: "application/json",
-      },
+      headers: { Accept: "application/json" },
     });
 
     if (res.ok) {
@@ -263,62 +262,93 @@ export default function Contact() {
 
   return (
     <CardContent className="p-8">
-      <h3 className="text-2xl font-bold text-white mb-6">Contact Me</h3>
+      <h3 className="text-3xl font-bold text-white mb-10 text-center">Contact Me</h3>
+      <div className="grid md:grid-cols-2 gap-12 text-white">
+        {/* LEFT SIDE INFO */}
+        <div>
+          <h4 className="text-2xl font-semibold mb-4">Get In Touch</h4>
+          <p className="mb-4 text-gray-300">
+            Ready to bring your ideas to life? Let's create something beautiful together. I'd love to hear about your project!
+          </p>
+          <p className="mb-6 text-gray-300">
+            I'm always excited to work on new projects and collaborate with amazing people. Whether you have a question,
+            a project idea, or just want to say hello, feel free to reach out!
+          </p>
 
-      {submitted ? (
-        <div className="text-green-400 text-lg font-semibold">
-          ✅ Thank you! Your message has been sent.
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <Mail size={18} /> <span>hanansaeed933@gmail.com</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Phone size={18} /> <span>+92 312-2948713</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <MapPin size={18} /> <span>Gujranwala, Pakistan</span>
+            </div>
+          </div>
+
+          {/* SOCIAL LINKS */}
+          <div className="mt-6 flex gap-4">
+            <a href="https://linkedin.com/in/YOUR-LINK" target="_blank" rel="noopener noreferrer">
+              <Linkedin className="hover:text-purple-500 transition" />
+            </a>
+            <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer">
+              <Github className="hover:text-purple-500 transition" />
+            </a>
+          </div>
         </div>
-      ) : (
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label htmlFor="name" className="block text-white font-medium mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Your name"
-              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
-          <div>
-            <label htmlFor="email" className="block text-white font-medium mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="you@example.com"
-              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-            />
-          </div>
-          <div>
-            <label htmlFor="message" className="block text-white font-medium mb-2">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={4}
-              required
-              placeholder="Your message..."
-              className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-            ></textarea>
-          </div>
 
-          <button
-            type="submit"
-            className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg hover:scale-105 transition-transform"
-          >
-            Send Message ✨
-          </button>
-        </form>
-      )}
+        {/* RIGHT SIDE FORM */}
+        <div>
+          {submitted ? (
+            <div className="text-green-400 text-lg font-semibold">
+              ✅ Thank you! Your message has been sent.
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <label htmlFor="name" className="block text-white font-medium mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your name"
+                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block text-white font-medium mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-white font-medium mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  required
+                  placeholder="Your message..."
+                  className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg hover:scale-105 transition-transform"
+              >
+                Send Message ✨
+              </button>
+            </form>
+          )}
+        </div>
+      </div>
     </CardContent>
   );
 }
