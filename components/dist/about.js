@@ -9,7 +9,6 @@
 //             A passionate web developer with an eye for design and a heart for creating beautiful digital experiences.
 //           </p>
 //         </div>
-
 //         <div className="flex flex-col md:flex-row items-center gap-12">
 //           <div className="md:w-2/5">
 //             <div className="relative">
@@ -19,7 +18,6 @@
 //                     <rect width="400" height="400" fill="#2D1B4E" />
 //                     <circle cx="200" cy="200" r="150" fill="#3D2C62" opacity="0.5" />
 //                     <circle cx="200" cy="200" r="120" fill="#1A0B2E" opacity="0.7" />
-
 //                     {/* Decorative flowers */}
 //                     <g transform="translate(80, 80) scale(0.5)">
 //                       <path
@@ -49,7 +47,6 @@
 //                         opacity="0.7"
 //                       />
 //                     </g>
-
 //                     {/* Girl silhouette */}
 //                     <path
 //                       d="M170,140 Q200,120 230,140 Q240,180 230,220 Q200,240 170,220 Q160,180 170,140"
@@ -62,7 +59,6 @@
 //                     <circle cx="190" cy="145" r="3" fill="#FF69B4" />
 //                     <circle cx="210" cy="145" r="3" fill="#FF69B4" />
 //                     <path d="M190,160 Q200,165 210,160" stroke="#FF69B4" strokeWidth="1" fill="none" />
-
 //                     {/* Laptop */}
 //                     <rect
 //                       x="170"
@@ -87,7 +83,6 @@
 //                     <line x1="180" y1="200" x2="220" y2="200" stroke="#FF69B4" strokeWidth="1" />
 //                     <line x1="180" y1="210" x2="210" y2="210" stroke="#9370DB" strokeWidth="1" />
 //                     <line x1="180" y1="220" x2="215" y2="220" stroke="#FF007F" strokeWidth="1" />
-
 //                     {/* Sparkles */}
 //                     <circle cx="160" cy="170" r="2" fill="white" opacity="0.8" />
 //                     <circle cx="240" cy="170" r="2" fill="white" opacity="0.8" />
@@ -97,7 +92,6 @@
 //               </div>
 //             </div>
 //           </div>
-
 //           <div className="md:w-3/5">
 //             <h3 className="text-2xl font-bold mb-4 gradient-text font-display">Frontend Web Developer</h3>
 //             <p className="text-stardust mb-6">
@@ -109,7 +103,6 @@
 //               business objectives. By prioritizing performance, accessibility, and responsiveness, I strive to deliver
 //               experiences that not only engage users but also drive tangible results.
 //             </p>
-
 //             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 //               <div className="card p-4 border border-orchid/20">
 //                 <h4 className="text-lg font-semibold mb-2 text-orchid">Education</h4>
@@ -132,13 +125,11 @@
 //                 <h4 className="text-lg font-semibold mb-2 text-orchid">Interests</h4>
 //                 <p className="text-starlight">UI/UX Design, Responsive Web Development</p>
 //                 <p className="text-stardust">Creative Coding, Animation, Photography, Travel</p>
-
 //               </div>
 //             </div>
 //           </div>
 //         </div>
 //       </div>
-
 //       {/* Decorative wave */}
 //       <svg className="absolute bottom-0 left-0 w-full" viewBox="0 0 1440 320">
 //         <path
@@ -150,51 +141,20 @@
 //     </section>
 //   )
 // }
-
-'use client'
-
-import { motion } from 'framer-motion'
-import { aboutContainer, aboutContent } from '../lib/animations'
-
-export default function About() {
-  return (
-    <section className="py-20 sm:py-32" id="about">
-      <motion.div
-        className="container grid grid-cols-1 items-center gap-8 md:grid-cols-2"
-        variants={aboutContainer}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
-      >
-        {/* Replaced SVG with your image */}
-        <div className="h-80 bg-royalPurple/30 rounded-lg overflow-hidden relative">
-          <img
-            src="/hanan.JPG"
-            alt="Hanan Saeed"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-
-        <motion.div className="space-y-6" variants={aboutContent}>
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            <span className="bg-gradient-to-r from-royalPurple to-lightPurple bg-clip-text text-transparent">
-              About Me
-            </span>
-          </h2>
-          <p className="text-base leading-relaxed text-muted">
-            I'm a dedicated and creative web developer passionate about designing
-            beautiful and user-friendly digital experiences. With a strong
-            foundation in front-end technologies, I aim to build responsive and
-            accessible websites that bring ideas to life.
-          </p>
-          <p className="text-base leading-relaxed text-muted">
-            Beyond coding, I enjoy learning new tools, exploring UI/UX trends, and
-            continuously improving my skills. Let's build something amazing
-            together!
-          </p>
-        </motion.div>
-      </motion.div>
-    </section>
-  )
+'use client';
+"use strict";
+exports.__esModule = true;
+var framer_motion_1 = require("framer-motion");
+var animations_1 = require("@/lib/animations");
+function About() {
+    return (React.createElement("section", { className: "py-20 sm:py-32", id: "about" },
+        React.createElement(framer_motion_1.motion.div, { className: "container grid grid-cols-1 items-center gap-8 md:grid-cols-2", variants: animations_1.aboutContainer, initial: "hidden", whileInView: "show", viewport: { once: true } },
+            React.createElement("div", { className: "h-80 bg-royalPurple/30 rounded-lg overflow-hidden relative" },
+                React.createElement("img", { src: "/hanan.JPG", alt: "Hanan Saeed", className: "w-full h-full object-cover rounded-lg" })),
+            React.createElement(framer_motion_1.motion.div, { className: "space-y-6", variants: animations_1.aboutContent },
+                React.createElement("h2", { className: "text-3xl font-bold tracking-tight text-white sm:text-4xl" },
+                    React.createElement("span", { className: "bg-gradient-to-r from-royalPurple to-lightPurple bg-clip-text text-transparent" }, "About Me")),
+                React.createElement("p", { className: "text-base leading-relaxed text-muted" }, "I'm a dedicated and creative web developer passionate about designing beautiful and user-friendly digital experiences. With a strong foundation in front-end technologies, I aim to build responsive and accessible websites that bring ideas to life."),
+                React.createElement("p", { className: "text-base leading-relaxed text-muted" }, "Beyond coding, I enjoy learning new tools, exploring UI/UX trends, and continuously improving my skills. Let's build something amazing together!")))));
 }
-
+exports["default"] = About;
